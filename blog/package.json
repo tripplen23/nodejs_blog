@@ -16,8 +16,10 @@
 
     "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
 
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
 
+    "prepare": "husky install"
+   
   },
 
   "repository": {
@@ -60,7 +62,7 @@
 
       "pre-commit": "lint-staged",
 
-      "pre-push": "run pre-commit --no-verify",
+      "pre-push": "run pre-commit",
 
       "...": "..."
 
