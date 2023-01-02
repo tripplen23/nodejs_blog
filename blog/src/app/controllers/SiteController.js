@@ -1,21 +1,18 @@
 class SiteController {
-
     // [GET] /
-    index(req, res){
+    index(req, res) {
         res.render('home');
     }
 
     //[GET] /me
-    me(req,res) {
+    me(req, res) {
         res.render('me');
     }
-    
+
     //[GET] /search
-    search(req,res) {
+    search(req, res) {
         res.render('search');
     }
-
 }
 
-module.exports = new SiteController; // dùng new để khởi tạo
-
+module.exports = new SiteController(); // dùng new để khởi tạo
