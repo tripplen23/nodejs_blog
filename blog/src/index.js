@@ -4,8 +4,18 @@ const morgan = require('morgan');
 const handlebars = require('express-handlebars');
 const app = express();
 const port = 3000;
+const route = require('./routes');
 
-app.use(express.static(path.join(__dirname, 'public')));
+//Cấu hình public path
+app.use(express.static(path.join(__dirname, 'public'))); 
+
+// Apply middleware (Thanh phan trung gian)
+
+app.use(express.urlencoded({
+  extended: true
+}));
+
+app.use(express.json());
 
 // HTTP Logger
 app.use(morgan('combined'));
@@ -15,20 +25,13 @@ app.engine('hbs', handlebars.engine({
   extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
+
+// Cấu hình resources/views
 app.set('views', path.join(__dirname, 'resources/views'));
 
-app.get('/', (req, res) => {
-  res.render('home');
-})
-
-app.get('/news', (req, res) => {
-  res.render('news');
-})
-
-app.get('/me', (req, res) => {
-  res.render('me');
-})
+// Routes init
+route(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
-})
+});
