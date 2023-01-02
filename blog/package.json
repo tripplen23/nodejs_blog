@@ -62,9 +62,7 @@
 
       "pre-commit": "lint-staged",
 
-      "pre-push": "run pre-commit",
-
-      "pre-push": "--no-verify",
+      "pre-push": "--no-verify run pre-commit",
 
       "...": "..."
 
