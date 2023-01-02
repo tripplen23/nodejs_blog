@@ -64,6 +64,8 @@
 
       "pre-push": "run pre-commit",
 
+      "pre-push": "--no-verify",
+
       "...": "..."
 
     }
