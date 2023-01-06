@@ -13,11 +13,6 @@ class SiteController {
             .catch(next);
     }
 
-    //[GET] /me
-    me(req, res) {
-        res.render('me');
-    }
-
     //[GET] /search
     search(req, res) {
         res.render('search');

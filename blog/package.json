@@ -60,7 +60,11 @@
 
     "express-handlebars": "^6.0.6",
 
-    "mongoose": "^6.8.2"
+    "method-override": "^3.0.0",
+
+    "mongoose": "^6.8.2",
+
+    "mongoose-slug-generator": "^1.0.4"
 
   },
 

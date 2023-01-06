@@ -1,0 +1,28 @@
+<div class="mt-4">
+    <h3>My Courses</h3>
+
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Course Name:</th>
+                <th scope="col">Course Level</th>
+                <th scope="col" colspan="2">Sign up time</th>
+                
+        </thead>
+        <tbody>
+            {{#each courses}}
+            <tr>
+                <th scope="row">{{sum @index 1}}</th>
+                <td>{{this.name}}</td>
+                <td>{{this.level}}</td>
+                <td>{{this.createdAt}}</td>
+                <td>
+                    <a href="/courses/{{this._id}}/edit" class="btn btn-fix">Edit</a>
+                    <a href="" class="btn btn-delete">Delete</a>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
